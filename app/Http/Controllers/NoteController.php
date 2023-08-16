@@ -50,6 +50,8 @@ class NoteController extends Controller
         $note->user_id = 1;
 
         $note->save();
+
+        return redirect(('/notes/'));
     }
 
 
