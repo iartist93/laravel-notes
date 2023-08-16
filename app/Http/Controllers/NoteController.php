@@ -21,11 +21,10 @@ class NoteController extends Controller
      *
      * The note object is passed ( /notes/{note} )
      * we forward this note object to the show note view
-     * 
+     *
      */
     public function show(Note $note)
     {
-        // inside the /notes/show
         return view('notes.show', compact('note'));
     }
 
