@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <title>Notes App</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -11,5 +12,5 @@
     @yield('content')
 </div>
 </body>
-
+@yield('scripts')
 </html>

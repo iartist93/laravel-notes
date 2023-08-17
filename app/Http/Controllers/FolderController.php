@@ -16,16 +16,19 @@ class FolderController extends Controller
     {
         $request->validate([
             'name' => 'required|max:255',
-            'color' => 'required',
         ]);
 
         $folder = Folder::create([
             'name' => $request->input('name'),
-            'color' => $request->input('color'),
+            'color' => $request->input('color', 'gray'),
+            'order' => Folder::max('order') + 1
         ]);
 
-        return redirect('/folders/' . $folder->id);
+        return response()->json($folder);
+
+//        return redirect('/notes/');
     }
+
     public function show(Folder $folder)
     {
         return view('folders.show', compact('folder'));

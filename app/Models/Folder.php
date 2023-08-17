@@ -9,7 +9,7 @@ class Folder extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'color', 'order'];
+    protected $fillable = ['name', 'order'];
 
     public function notes()
     {
