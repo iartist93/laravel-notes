@@ -3,9 +3,10 @@
 @section('content')
     <div class="p-4">
         <!-- Button to add new folder -->
+
         <div class="flex items-center mt-4">
             <button id="add-folder-btn"
-                    class="bg-emerald-800 text-white rounded-lg p-2 w-44 h-14 flex items-center justify-center">
+                    class="bg-green-700 text-white rounded-lg p-2 w-44 h-14 flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                      class="w-4 h-4">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -17,19 +18,20 @@
                    placeholder="folder name"/>
         </div>
 
-        <div id="folders-list" class="mt-8 flex flex-wrap -mx-4">
+        <div id="folders-list" class="flex flex-wrap my-8 gap-x-4 gap-y-3">
             @foreach($folders as $folder)
                 @component('components.folder-card', ['name' => $folder->name])
                 @endcomponent
             @endforeach
         </div>
 
+        <hr/>
 
-        <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div class="my-12 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             @foreach ($notes as $note)
                 <div class="bg-white shadow rounded-lg p-4">
                     <a href="{{route('notes.show', $note)}}">
-                        <h2 class="text-lg font-semibold">{{ $note->title }}</h2>
+                        <h2 class="text-lg font-semibold text-green-600">{{ $note->title }}</h2>
                     </a>
                     <p class="text-gray-600 mt-2">{{ $note->text }}</p>
                     <div class="mt-4 flex justify-between items-center">
