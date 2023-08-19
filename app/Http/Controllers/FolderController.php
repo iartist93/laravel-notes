@@ -31,7 +31,8 @@ class FolderController extends Controller
 
     public function show(Folder $folder)
     {
-        return view('folders.show', compact('folder'));
+        $notes = $folder->notes;
+        return view('folders.show', compact('notes', 'folder'));
     }
 
     public function edit(Folder $folder)
